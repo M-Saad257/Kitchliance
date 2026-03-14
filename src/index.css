@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+
+/* Scroll Bar CSS */
+::-webkit-scrollbar {
+    width: 12px; /* Adjust width as needed */
+}
+
+::-webkit-scrollbar-track {
+    background: #ffffff; /* Track color */
+    border-left: 1px solid black; /* Track Border */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #504f4f; /* Thumb color */
+    border-radius: 6px; /* Optional rounding */
+    cursor: pointer;
+}
