@@ -83,7 +83,7 @@ const ProdAdd = () => {
                     images: [],
                     link: '',
                     featured: false,
-                    rating: 0
+                    rating: "",
                 });
                 setImages([]);
                 setShowCustomCategory(false);

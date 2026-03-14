@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import multer from 'multer';
 import { createServer } from 'http';
 import { Server } from 'socket.io';
+import fs from "fs";
 
 dotenv.config();
 
@@ -24,14 +25,19 @@ app.use(cors());
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 
+
+if (!fs.existsSync("uploads")) {
+    fs.mkdirSync("uploads");
+}
+
 // Multer setup
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, 'uploads/');
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + '-' + file.originalname);
-  }
+    destination: (req, file, cb) => {
+        cb(null, 'uploads/');
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + '-' + file.originalname);
+    }
 });
 const upload = multer({ storage });
 
