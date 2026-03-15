@@ -42,7 +42,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // MongoDB Connection
-const mongoURI = 'mongodb+srv://saadprocoder_db_user:wkr2PwGTxrVZfSed@kitchliance.do6pail.mongodb.net/kitchliance';
+const mongoURI = "mongodb+srv://saadprocoder_db_user:wkr2PwGTxrVZfSed@kitchliance.do6pail.mongodb.net/";
 
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,
